@@ -1,0 +1,27 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: null
+  labels:
+    app: hello
+    app.kubernetes.io/component: hello
+    app.kubernetes.io/instance: hello
+  name: hello
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - annotations:
+        openshift.io/imported-from: quay.io/bkozdemb/hello
+      from:
+        kind: DockerImage
+        name: quay.io/bkozdemb/hello
+      generation: null
+      importPolicy: {}
+      name: latest
+      referencePolicy:
+        type: ""
+status:
+  dockerImageRepository: ""
